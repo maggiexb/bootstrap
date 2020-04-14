@@ -39,12 +39,14 @@ Similar to the contextual text color classes, easily set the background of an el
 
 ## Background gradient
 
-When `$enable-gradients` is set to `true` (default is `false`), you can use `.bg-gradient-` utility classes. [Learn about our Sass options]({{< docsref "/getting-started/theming#sass-options" >}}) to enable these classes and more.
+By adding a `.bg-gradient` class, a linear gradient is added as background image to the backgrounds. The gradient is a semi-transparent linear gradient from light (`$color-contrast-light`) to dark (`$color-contrast-dark`) and therefore works on any background color.
+
+Do you need a gradient in your custom CSS? Just add `background-image: var(--bs-gradient);`.
 
 {{< markdown >}}
 {{< colors.inline >}}
 {{- range (index $.Site.Data "theme-colors") }}
-- `.bg-gradient-{{ .name }}`
+<div class="p-3 mb-2 bg-{{ .name }} bg-gradient {{ if or (eq .name "light") (eq .name "warning") }}text-dark{{ else }}text-white{{ end }}">.bg-{{ .name }}.bg-gradient</div>
 {{- end -}}
 {{< /colors.inline >}}
 {{< /markdown >}}
