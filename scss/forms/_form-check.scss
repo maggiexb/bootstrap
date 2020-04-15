@@ -72,7 +72,7 @@
     border-color: $form-check-input-indeterminate-border-color;
 
     @if $enable-gradients {
-      background-image: escape-svg($form-check-input-indeterminate-bg-image), var(--gradient);
+      background-image: escape-svg($form-check-input-indeterminate-bg-image), var(--bs-gradient);
     } @else {
       background-image: escape-svg($form-check-input-indeterminate-bg-image);
     }
